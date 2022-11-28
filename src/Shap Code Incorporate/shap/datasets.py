@@ -9,6 +9,7 @@ except ImportError:
     from urllib import urlretrieve
 
 github_data_url = "https://github.com/slundberg/shap/raw/master/data/"
+#github_data_url = "https://raw.githubusercontent.com/slundberg/shap/master/data/"
 
 def imagenet50(display=False, resolution=224): # pylint: disable=unused-argument
     """ This is a set of 50 images representative of ImageNet images.

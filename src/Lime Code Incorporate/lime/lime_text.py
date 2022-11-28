@@ -370,7 +370,7 @@ class LimeTextExplainer(object):
                          text_instance,
                          classifier_fn,
                          labels=(1,),
-                         top_labels=None,
+                         top_labels=None, 
                          num_features=10,
                          num_samples=5000,
                          distance_metric='cosine',
@@ -404,12 +404,10 @@ class LimeTextExplainer(object):
             explanations.
         """
 
-        indexed_string = (IndexedCharacters(
-            text_instance, bow=self.bow, mask_string=self.mask_string)
-                          if self.char_level else
-                          IndexedString(text_instance, bow=self.bow,
-                                        split_expression=self.split_expression,
-                                        mask_string=self.mask_string))
+        indexed_string = (IndexedCharacters(text_instance, bow=self.bow, mask_string=self.mask_string)
+                          if self.char_level 
+                          else
+                          IndexedString(text_instance, bow=self.bow, split_expression=self.split_expression, mask_string=self.mask_string))
         domain_mapper = TextDomainMapper(indexed_string)
         data, yss, distances = self.__data_labels_distances(
             indexed_string, classifier_fn, num_samples,
@@ -477,8 +475,7 @@ class LimeTextExplainer(object):
         features_range = range(doc_size)
         inverse_data = [indexed_string.raw_string()]
         for i, size in enumerate(sample, start=1):
-            inactive = self.random_state.choice(features_range, size,
-                                                replace=False)
+            inactive = self.random_state.choice(features_range, size, replace=False)
             data[i, inactive] = 0
             inverse_data.append(indexed_string.inverse_removing(inactive))
         labels = classifier_fn(inverse_data)
