@@ -1,10 +1,2 @@
-Requirement already satisfied: jinja2 in c:\users\asif.raza\anaconda3\lib\site-packages (3.0.3)
-Collecting jinja2
-  Using cached Jinja2-3.1.2-py3-none-any.whl (133 kB)
-Requirement already satisfied: MarkupSafe>=2.0 in c:\users\asif.raza\anaconda3\lib\site-packages (from jinja2) (2.0.1)
-Installing collected packages: jinja2
-  Attempting uninstall: jinja2
-    Found existing installation: Jinja2 3.0.3
-    Uninstalling Jinja2-3.0.3:
-      Successfully uninstalled Jinja2-3.0.3
-Successfully installed jinja2-3.1.2
+Requirement already satisfied: jinja2 in c:\users\asif.raza\appdata\local\programs\python\python310\lib\site-packages (3.1.2)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\asif.raza\appdata\local\programs\python\python310\lib\site-packages (from jinja2) (2.1.1)
